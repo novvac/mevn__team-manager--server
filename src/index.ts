@@ -1,9 +1,12 @@
 import express from 'express';
-import { json } from 'body-parser';
+import { Request, Response } from 'express';
 
 const app = express();
-app.use(json);
+
+app.get('/', (req: Request, res: Response) => {
+    res.send('Application works!');
+})
 
 app.listen(3000, () => {
-    console.log('server is listening on port 3000');
+    console.log('Application started on port 3000')
 })
